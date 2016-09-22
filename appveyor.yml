@@ -31,7 +31,7 @@ build_script:
   - bundle install || bundle install || bundle install
   - bundle exec rake
   - bundle exec kitchen conv
-#  - ps: Restart-Computer -Force
+  - ps: Restart-Computer -Force
 #  - ps: Start-Sleep -s 70
 
 test_script:
