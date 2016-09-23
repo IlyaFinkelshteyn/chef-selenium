@@ -36,6 +36,7 @@ build_script:
   - shutdown /a
   - ps: Start-Sleep 10
   - ps: Restart-Computer -Force
+  - ps: Start-Sleep 30
   - ps: Write-host "Restarted" -ForegroundColor Yellow
 
 test_script:
