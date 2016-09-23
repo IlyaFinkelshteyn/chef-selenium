@@ -32,8 +32,10 @@ build_script:
   - bundle exec rake
   - bundle exec kitchen conv
 
-  - ps: Start-Sleep 10
+  - ps: (Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Virtual Machine\Guest\Parameters' -Name "HostName").HostName
+  - ps: Start-Sleep -s 10
   - ps: Restart-Computer
+  - ps: Start-Sleep -s 10
   - ps: Write-host "Restarted" -ForegroundColor Yellow
 
 test_script:
