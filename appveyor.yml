@@ -32,7 +32,7 @@ build_script:
   - bundle exec rake
   - bundle exec kitchen conv
   # - shutdown /a
-  - ps: while (#true) {Restart-Computer -Force | Out-Null; write-host "sleeping..."; sleep 10}
+  - ps: while ($true) {Restart-Computer -Force | Out-Null; write-host "sleeping..."; sleep 10}
 #  - ps: Start-Sleep -s 70
 
 test_script:
