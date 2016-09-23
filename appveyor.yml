@@ -33,7 +33,7 @@ build_script:
   - bundle exec kitchen conv
 
   - ps: Start-Sleep 10
-  - ps: Restart-Computer -Force
+  - ps: Restart-Computer
   - ps: Write-host "Restarted" -ForegroundColor Yellow
 
 test_script:
