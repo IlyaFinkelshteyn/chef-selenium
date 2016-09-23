@@ -31,13 +31,11 @@ build_script:
   - bundle install || bundle install || bundle install
   - bundle exec rake
   - bundle exec kitchen conv
-  
-  - ps: Write-host "Restarting forcibly" -ForegroundColor Yellow
-  - shutdown /a
+
   - ps: Start-Sleep 10
   - ps: Restart-Computer -Force
-  - ps: Start-Sleep 30
   - ps: Write-host "Restarted" -ForegroundColor Yellow
 
 test_script:
+  - ps: Write-host "Starting tests" -ForegroundColor Yellow
   - bundle exec kitchen veri
