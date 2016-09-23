@@ -31,8 +31,8 @@ build_script:
   - bundle install || bundle install || bundle install
   - bundle exec rake
   - bundle exec kitchen conv
-  - shutdown /a
-  - ps: Restart-Computer -Force
+  # - shutdown /a
+  - ps: while (#true) {Restart-Computer -Force | Out-Null; write-host "sleeping..."; sleep 10}
 #  - ps: Start-Sleep -s 70
 
 test_script:
